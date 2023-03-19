@@ -1,7 +1,4 @@
-// DB DESIGN 
-
-// ! USERS TABLE 
-
+```sql
 TABLE users {
   id SERIAL [pk, increment]
   created_at TIMESTAMP
@@ -15,8 +12,6 @@ TABLE users {
   status VARCHAR(15)
 }
 
-// ! POSTS TABLE 
-
 TABLE posts {
   id SERIAL [pk, increment]
   created_at TIMESTAMP
@@ -28,7 +23,6 @@ TABLE posts {
   lng REAL
 }
 
-// ! COMMENTS TABLE 
 
 TABLE comments {
   id SERIAL [pk, increment]
@@ -39,8 +33,6 @@ TABLE comments {
   post_id INTEGER [ref: > posts.id]
 }
 
-// ! LIKES TABLE
-
 TABLE likes {
   id SERIAL [pk, increment]
   created_at TIMESTAMP
@@ -49,7 +41,6 @@ TABLE likes {
   comment_id INTEGER [ref: > comments.id]
 }
 
-// ! TAGS TABLE 
 
 TABLE photo_tags {
   id SERIAL [pk, increment]
@@ -68,7 +59,6 @@ TABLE caption_tag {
   user_id INTEGER [ref: > users.id]
 }
 
-// ! HASHTAGS TABLE
 
 TABLE hastags {
   id SERIAL [pk, increment]
@@ -82,7 +72,6 @@ TABLE hastags_posts {
   post_id INTEGER [ref: > posts.id]
 }
 
-// ! FOLLOWERS TABLE 
 
 TABLE followers {
   id SERIAL [pk, increment]
